@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Result } = require('../db/models');
 
 router.post('/', async (req, res) => {
   const isAuthorized = !!req.session.user;
@@ -8,5 +9,23 @@ router.post('/', async (req, res) => {
   }
   return res.json({ isAuthorized });
 });
+
+//лист результатов всех участников
+router.get('/', async (req, res) => {
+  let results;
+  try {
+    results = await Result.findAll({
+      raw: true,
+    });
+  }
+  catch (error) {
+    res.status(401).json({ error: error.message });
+    return;
+  }
+  results.sort((a, b) => b.points - a.points)
+  console.log(results)
+  res.json({ results });
+})
+
 
 module.exports = router;
