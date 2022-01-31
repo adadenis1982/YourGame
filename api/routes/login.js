@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
   if (user && (await bcrypt.compare(password, user.password))) {
     req.session.user = user;
 
-    res.status(200).json({ login: true, user: user.username });
+    res.status(200).json({ login: true, user: user });
   } else {
     res.json({ login: false, message: 'Вам необходимо зарегистрироваться или Вы ввели неверные данные' });
   }

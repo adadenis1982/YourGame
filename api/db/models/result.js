@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Result extends Model {
     /**
@@ -13,12 +14,23 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Result.init({
-    username: DataTypes.STRING,
-    points: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Result',
-  });
+
+  Result.init(
+    {
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'User',
+          key: 'id',
+        },
+      },
+      points: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: 'Result',
+    }
+  );
   return Result;
 };
