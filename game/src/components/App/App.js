@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { CHECK_SESSION } from '../../redux/actionTypes/isAuthorized';
 import Game from "../game/game";
+import Profile from '../Profile/Profile';
 
 function App() {
   const dispatch = useDispatch();
@@ -22,7 +23,10 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         if (data.isAuthorized) {
-          dispatch({ type: CHECK_SESSION, payload: { status: data.isAuthorized, user: data.user }});
+          dispatch({
+            type: CHECK_SESSION,
+            payload: { status: data.isAuthorized, user: data.user},
+          });
         }
       });
   }, [dispatch]);
@@ -35,6 +39,7 @@ function App() {
           <Route path="register" element={<Registration />} />
           <Route path="login" element={<Login />} />
           <Route path="game" element={<Game />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>
