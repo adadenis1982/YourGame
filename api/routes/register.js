@@ -21,7 +21,7 @@ router.route('/').post(async (req, res) => {
 
       req.session.user = user;
 
-      res.status(201).json({ registration: true, user: user.username });
+      res.status(201).json({ registration: true, user: user });
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
