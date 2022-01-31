@@ -1,7 +1,16 @@
 import {Button, Modal} from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 export default function Modal1(props) {
-    console.log(props)
+
+    const id = props.curId.split(':');
+
+    console.log(id)
+
+    const { themes } = useSelector((state) => state.questReducer);
+
+    console.log(themes);
+
     return (
         <Modal
             {...props}
@@ -11,15 +20,13 @@ export default function Modal1(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Modal heading
+                {/* {themes[Number(id[0])].title} */}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <h4>Centered Modal</h4>
                 <p>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                    consectetur ac, vestibulum at eros.
+                    {/* {themes[Number(id[0])].Questions[Number(id[1])].text} */}
                 </p>
             </Modal.Body>
             <Modal.Footer>
