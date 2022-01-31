@@ -6,6 +6,7 @@ import Login from '../Login/Login';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { CHECK_SESSION } from '../../redux/actionTypes/isAuthorized';
+import Game from "../game/game";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="register" element={<Registration />} />
           <Route path="login" element={<Login />} />
+          <Route path="game" element={<Game />} />
         </Route>
       </Routes>
     </BrowserRouter>
