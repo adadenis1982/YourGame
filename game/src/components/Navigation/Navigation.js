@@ -37,6 +37,9 @@ function Navigation(props) {
             </Nav.Link>
             {state && (
               <>
+                <Nav.Link as={Link} to="game">
+                  Игра
+                </Nav.Link>
                 <Nav.Link as={Link} to="#" onClick={logout}> Выйти</Nav.Link>
                 <Nav.Link as={Link} to="profile">
                   Профиль
