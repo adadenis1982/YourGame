@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 function Home(props) {
   const name = useSelector((state) => state.checkSessionReducer.user);
 
-  return <> {typeof name === 'string' ? `Приветствуем Вас ${name}` : 'Нет никого'} </>;
+  return <> {typeof name.username === 'string' ? `Приветствуем Вас ${name.username}` : 'Нет никого'} </>;
 }
 
 export default Home;
