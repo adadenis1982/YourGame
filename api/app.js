@@ -7,7 +7,7 @@ const FileStore = require('session-file-store')(session);
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT ?? 5000;
+const PORT = process.env.PORT ?? 4000;
 
 const registerRouter = require('./routes/register');
 const isAuthorizedRouter = require('./routes/isAuthorized');
@@ -35,7 +35,7 @@ app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:3000'],
+  origin: true,
   credentials: true,
 }));
 
@@ -43,6 +43,7 @@ app.use('/register', registerRouter);
 app.use('/isAuthorized', isAuthorizedRouter);
 app.use('/logout', logoutRouter);
 app.use('/login', loginRouter);
+app.use('/game', require("./routes/game"))
 
 app.use('/point', pointRouter);
 
