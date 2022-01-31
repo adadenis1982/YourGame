@@ -7,7 +7,20 @@ export default function Modal1(props) {
 
     console.log(id)
 
-    const { themes } = useSelector((state) => state.questReducer);
+    const { themes, loading } = useSelector((state) => state.questReducer);
+
+    const theme = themes.find((el) => el.id === Number(id[0]));
+    let title, question, questText
+    if (theme){
+        title = theme.title;
+        question = theme.Questions.find((el)=> el.id === Number(id[1]));
+        if (question){
+            questText = question.text;
+        }
+    }else{
+        title = "loading";
+    }
+
 
     console.log(themes);
 
@@ -20,13 +33,13 @@ export default function Modal1(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                {/* {themes[Number(id[0])].title} */}
+                 {title}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <h4>Centered Modal</h4>
                 <p>
-                    {/* {themes[Number(id[0])].Questions[Number(id[1])].text} */}
+                    {questText}
                 </p>
             </Modal.Body>
             <Modal.Footer>
