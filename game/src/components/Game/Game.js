@@ -63,13 +63,13 @@ const Game = () => {
   return (
     <>
       <div style={{ display: 'flex'}}>
-          <Card className="mx-5" style={{ width: '18rem' }}>
+          <Card className="mx-5 card text-center" style={{ width: '18rem'}} border="light" variant="dark" text="dark" >
             <Card.Body>
               <Card.Title>Счет</Card.Title>
               <Card.Text>
                     {count}
               </Card.Text>
-              <Card.Link value={count} onClick={onClick}>Закончить игру</Card.Link>
+              <Card.Link value={count} onClick={onClick} style={{ color: 'black' }}>Закончить игру</Card.Link>
             </Card.Body>
           </Card>
           <div className="container">
@@ -84,6 +84,7 @@ const Game = () => {
                         width: '200px',
                         height: '100px',
                       }}
+                      className="btn"
                     >
                       <font size="4" color="white" face="Arial">
                         {el.title}
