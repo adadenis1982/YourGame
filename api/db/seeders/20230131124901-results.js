@@ -7,12 +7,14 @@ module.exports = {
         {
           username: 'Sarah',
           points: 600,
+          userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           username: 'Michael',
           points: 1200,
+          userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },

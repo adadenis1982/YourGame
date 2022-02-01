@@ -22,7 +22,8 @@ router.get('/', async (req, res) => {
     res.status(401).json({ error: error.message });
     return;
   }
-  results.sort((a, b) => b.points - a.points)
+  results.sort((a, b) => b.points - a.points);
+  results = results.slice(0, 5)
   console.log(results)
   res.json({ results });
 })
