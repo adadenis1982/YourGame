@@ -17,6 +17,9 @@ module.exports = {
         },
       },
       points: Sequelize.INTEGER,
+      username: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

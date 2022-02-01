@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
 import axios from 'axios';
+import ListGroup from 'react-bootstrap/ListGroup'
+import style from "./style.css"
 
 export default function Table() {
 
@@ -13,7 +15,10 @@ export default function Table() {
 
   const pointList = points.map((point) => (
     <>
-      <div>{point.username}  {point.points}</div>
+      <ListGroup.Item className="row" variant="dark" key={point.id * 10000} >
+        <div className="data" >{point.username}   {point.points}</div>
+        {/* <div className="data">{point.points}</div> */}
+      </ListGroup.Item>
     </>
   ));
   return pointList;
