@@ -1,10 +1,12 @@
 {
   "development": {
-    "username": "denis",
-    "password": "denis",
-    "database": "Game",
+    "username": "owl",
+    "password": 1234,
+    "database": "game",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "seederStorage": "sequelize",
+    "seederStorageTableName": "SequelizeData"
   },
   "test": {
     "username": "root",
