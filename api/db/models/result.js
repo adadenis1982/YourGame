@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id',
         },
       },
+      username: DataTypes.STRING,
       points: DataTypes.INTEGER,
     },
     {
