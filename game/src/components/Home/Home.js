@@ -7,7 +7,6 @@ import style from './style.css'
 function Home() {
   const name = useSelector((state) => state.checkSessionReducer.user);
 
-
   return (
     <>
       <div className="greeting">

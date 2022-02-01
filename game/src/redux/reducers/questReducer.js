@@ -3,7 +3,7 @@ import * as types from "../actionTypes/quest";
 const initialState = {
     loading: false,
     error: null,
-    themes: [{Questions:[]}]
+    themes: []
 }
 
 export default function questReducer(state = initialState, action) {

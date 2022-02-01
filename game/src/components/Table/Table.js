@@ -11,7 +11,7 @@ export default function Table() {
   useEffect(() => {
     axios.get('http://localhost:4000/isAuthorized').then((result) => setPoints(result.data.results));
   }, []);
-  console.log(points);
+  // console.log(points);
 
   const pointList = points.map((point) => (
     <>
