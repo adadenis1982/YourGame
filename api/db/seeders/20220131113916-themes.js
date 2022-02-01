@@ -14,6 +14,11 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          title: 'Сказки',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );
