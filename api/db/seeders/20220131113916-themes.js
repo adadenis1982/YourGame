@@ -9,6 +9,11 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          title: 'География',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );
