@@ -19,6 +19,16 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          title: 'Фильмы',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          title: 'История',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );
