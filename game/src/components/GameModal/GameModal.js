@@ -1,6 +1,7 @@
 import { Button, Modal } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { PUT_POINT } from '../../redux/actionTypes/isAuthorized'
+import Countdown from 'react-countdown';
 
 function GameModal(props) {
 
@@ -43,6 +44,17 @@ function GameModal(props) {
 
   }
 
+  const renderer = ({ hours, minutes, seconds, completed }) => {
+    if (completed) {
+      setTimeout(() => {
+        props.onHide();
+      }, 100);
+      return <span></span>
+    } else {
+      return <span style={{color: 'red'}}>{seconds}</span>;
+    }
+  }; 
+
   return (
     <Modal
       {...props}
@@ -51,7 +63,7 @@ function GameModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">{title}</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">{title} <Countdown date={Date.now() + 15000} renderer={renderer} className="mx-5"/></Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <p>{questText}</p>

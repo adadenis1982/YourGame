@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 function ProfilePoint({ el }) {
 
   return (
-     <Card.Text>Время: {el.createdAt} Очки: {el.points} </Card.Text>
+     <Card.Text>Дата: {el.createdAt.toString().slice(0, 10).replace('T', ' ')} <br/> Очки: {el.points} </Card.Text>
   );
 }
 
