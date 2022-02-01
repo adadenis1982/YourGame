@@ -5,7 +5,6 @@ import Table from '../Table/Table';
 function Home() {
   const name = useSelector((state) => state.checkSessionReducer.user);
 
-
   return (<> {typeof name.username === 'string' ? `Приветствуем Вас ${name.username}` : 'Нет никого'} <Table></Table> </>);
 
 }

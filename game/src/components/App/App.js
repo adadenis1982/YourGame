@@ -6,7 +6,7 @@ import Login from '../Login/Login';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { CHECK_SESSION } from '../../redux/actionTypes/isAuthorized';
-import Game from "../game/game";
+import Game from "../Game/Game";
 import Profile from '../Profile/Profile';
 
 function App() {
