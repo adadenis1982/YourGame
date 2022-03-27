@@ -9,4 +9,4 @@ npm start
 
 Enjoy! blush
 
-![Снимок экрана от 2022-03-27 11-55-14](https://user-images.githubusercontent.com/72496042/160274310-18f40abb-ea79-461d-a469-fba2525673c2.png)
+![Снимок экрана от 2022-03-27 11-57-41](https://user-images.githubusercontent.com/72496042/160274356-5421f4e8-b700-4f6b-9f39-1f2ddd8d82c8.png)
